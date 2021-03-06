@@ -30,11 +30,6 @@ app.get('/', async (req, res) => {
 	res.render('home')
 })
 
-app.get('/user/:id', async (req, res) => {
-	await const user = user.findById(req.params.id)
-	res.render('user', { user })
-})
-
 app.get('/user/new', (req, res) => {
 	res.render('new-user');
 })
@@ -42,9 +37,14 @@ app.get('/user/new', (req, res) => {
 app.post('/user/new', async(req, res) => {
 	const user = new User(req.body.user);
 	await user.save();
-	console.log(user);
-	res.redirect('/');
+	res.redirect(`/user/${user._id}`);
 })
+
+app.get('/user/:id', async (req, res) => {
+	const user = await User.findById(req.params.id)
+	res.render('user', { user })
+})
+
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
