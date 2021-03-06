@@ -30,6 +30,8 @@ app.get('/', async (req, res) => {
 	res.render('home')
 })
 
+app.get('/user/climb/new', (req, res) => )
+
 app.get('/user/new', (req, res) => {
 	res.render('new-user');
 })
