@@ -30,7 +30,9 @@ app.get('/', async (req, res) => {
 	res.render('home')
 })
 
-app.get('/user/climb/new', (req, res) => )
+app.post('/user/:id/climb/new', async (req, res) => {
+	const climb = req.body.climb;
+})
 
 app.get('/user/new', (req, res) => {
 	res.render('new-user');

@@ -8,5 +8,10 @@
 	<h1>Welcome <%= user.username %></h1>
 	<h5>Your email is <%= user.email %></h5>
 
+	<form action="/user<%= user._id %>/climb/new" >
+		<input type="number" name="climb[rating]">
+		<input type="text" name="climb[name]">
+	</form>
+
 </body>
 </html>
