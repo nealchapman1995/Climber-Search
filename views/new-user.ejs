@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add a New User</title>
+</head>
+<body>
+<form method="POST" action="/user/new">
+	<label for='username'>Username</label>
+	<input type="text" name="user[username]" id="username">
+	<label for='email'>Email</label>
+	<input type="email" name="user[email]" id="email">
+	<label for="password">Password</label>
+	<input type="password" name="user[password]" id="password">
+	<button>Add New User</button>
+</form>
+</body>
+</html>
